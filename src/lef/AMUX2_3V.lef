@@ -1,0 +1,71 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO AMUX2_3V
+  CLASS BLOCK ;
+  FOREIGN AMUX2_3V ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 8.740 BY 5.440 ;
+  PIN select
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 2.300 2.400 2.900 2.800 ;
+    END
+  END select
+  PIN I0
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 6.800 3.500 7.700 4.000 ;
+    END
+  END I0
+  PIN out
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 1.000 3.500 1.900 4.000 ;
+    END
+  END out
+  PIN I1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 0.200 3.500 0.900 4.000 ;
+    END
+  END I1
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met1 ;
+        RECT 0.000 2.440 8.740 2.920 ;
+    END
+  END VSS
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met1 ;
+        RECT 0.000 -0.240 8.720 0.240 ;
+      LAYER met1 ;
+        RECT 0.000 5.200 8.740 5.680 ;
+    END
+  END VDD
+  OBS
+    LAYER li1 ;
+      RECT 0.000 0.000 8.740 5.440 ;
+    LAYER met1 ;
+      RECT 0.000 0.240 8.740 2.440 ;
+      RECT 0.000 2.920 8.740 5.200 ;
+    LAYER met2 ;
+      RECT 0.000 0.000 8.740 2.400 ;
+      RECT 0.000 2.800 8.740 5.440 ;
+  END
+END AMUX2_3V
+END LIBRARY
